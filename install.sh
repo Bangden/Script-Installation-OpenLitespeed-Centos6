@@ -100,7 +100,7 @@ echo " Setup Mysql "
 echo "============="
 /etc/init.d/mysql stop
 cd /etc/
-rm -f my.cnf
+rm -f myconf.cnf
 wget http://www.indogonetwork.com/myconf.txt
 mv myconf.txt myconf.cnf
 /etc/init.d/mysql start
@@ -138,14 +138,16 @@ mkdir html
 cd html
 sudo wget http://wordpress.org/latest.zip
 sudo unzip latest.zip
-mv /wordpress/* /usr/local/lsws/Example/html/
+mv wordpress/* /usr/local/lsws/Example/html/
 rm -f latest.zip
 rm -Rf wordpress
 sudo chown -R nobody:nobody /usr/local/lsws/Example/html/
+echo ""
 wget http://www.indogonetwork.com/vhconf.txt
 rm -f /usr/local/lsws/conf/vhosts/Example/vhconf.conf
 mv vhconf.txt /usr/local/lsws/conf/vhosts/Example/vhconf.conf
 sudo chown -R lsadm:lsadm /usr/local/lsws/conf/vhosts/Example/vhconf.conf
+echo ""
 wget http://www.indogonetwork.com/httpd_config.txt
 rm -f /usr/local/lsws/conf/httpd_config.conf
 mv httpd_config.txt /usr/local/lsws/conf/httpd_config.conf
@@ -163,10 +165,10 @@ echo "+        /_______  /\____/|___|  (____  /__|  \___  >         +"
 echo "+                \/            \/     \/          \/          +"
 echo "+-------------------------------------------------------------+"
 echo "+     ITUNG2 BUAT TENAGA, ROKOK, KOPI KONEKSI & PIKIRAN       +"
-echo "+                                                             +"
-echo "+               PAYPAL  = https://goo.gl/Klysm4               +"
+echo "+                 T E R I M A  K A S I H                      +"
+echo "+             PAYPAL  = https://bit.ly/bangden                +"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "==============================================================="
-echo "= Seting Wordpressnya:                                        ="
-echo "= Melalui IP: $ipserver / Domain Anda                         ="
+echo "= Seting Wordpressnya:                                        "
+echo "= Melalui IP: $ipserver / Domain Anda                         "
 echo "==============================================================="
