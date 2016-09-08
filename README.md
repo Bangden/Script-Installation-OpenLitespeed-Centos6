@@ -21,4 +21,4 @@ Persyaratan
 Cara Penggunaan
 ====
 - Letakan file install.sh di folder root pada vps
-- Jalankan script menggunakan perintah sh install.sh
+- Jalankan script menggunakan perintah: sudo sh install.sh
