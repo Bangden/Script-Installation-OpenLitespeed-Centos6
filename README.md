@@ -10,7 +10,7 @@
 PENGANTAR
 ====
 Script ini akan berjalan pada OS dan melakukan penginstalan dengan spesifikasi dibawah ini:
-- CentOS 6.x
+- CentOS 6.x 64bit
 - OpenLiteSpeed
 - Percona MySQL
 
