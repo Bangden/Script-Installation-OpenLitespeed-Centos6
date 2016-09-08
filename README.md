@@ -1,3 +1,12 @@
+<pre>
+     ____.               __    ___________ _______________________________________ 
+    |    |__ __  _______/  |_  \_   _____/ \      \__    ___/\_   _____/\______   \
+    |    |  |  \/  ___/\   __\  |    __)_  /   |   \|    |    |    __)_  |       _/
+/\__|    |  |  /\___ \  |  |    |        \/    |    \    |    |        \ |    |   \
+\________|____//____  > |__|   /_______  /\____|__  /____|   /_______  / |____|_  /
+                    \/                 \/         \/                 \/         \/ 
+</pre>
+
 PENGANTAR
 ====
 Script ini akan berjalan pada OS dan melakukan penginstalan dengan spesifikasi dibawah ini:
@@ -21,4 +30,4 @@ Persyaratan
 Cara Penggunaan
 ====
 - Letakan file install.sh di folder root pada vps
-- Jalankan script menggunakan perintah: sudo sh install.sh
+- Jalankan script menggunakan perintah: **sudo sh install.sh**
