@@ -28,9 +28,8 @@ echo "+ Sebelum memulai alangkah baiknya kita berdoa kepada YME agar diberi kela
 echo "+       Sebelum masuk step 1, kita matikan Iptables & update dulu                 +"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 cd /
-sudo /sbin/service iptables stop
+/sbin/service iptables stop
 sudo yum -y update
-clear
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+ Tahap 1: Install Repositori Percona Mysql Server +"
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++"
@@ -58,6 +57,7 @@ wget http://fedoraproject.org/static/0608B895.txt
 echo "Lalu hasil download kunci GPG kita pindahkan. Ketik Y lalu ENTER"
 mv 0608B895.txt /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6
 rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6
+echo ""
 echo "+++++++++++++++++++++++++++++++++++++++"
 echo "+ Tahap 3: Install Development Tools  +"
 echo "+++++++++++++++++++++++++++++++++++++++"
@@ -70,7 +70,6 @@ sudo yum -y install yum-plugin-replace
 echo ""
 echo "Sekarang kita replace Opensslnya"
 sudo yum -y replace openssl --replace-with=openssl10
-clear
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+ Tahap 4: Install OpenLitespeed Repo dan OpenLiteSpeed +"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
