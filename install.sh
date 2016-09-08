@@ -142,23 +142,28 @@ rm -f latest.zip
 rm -Rf wordpress
 sudo chown -R nobody:nobody /usr/local/lsws/Example/html/
 echo ""
-wget http://www.indogonetwork.com/vhconf.txt
-rm -f /usr/local/lsws/conf/vhosts/Example/vhconf.conf
-mv vhconf.txt /usr/local/lsws/conf/vhosts/Example/vhconf.conf
+cd /usr/local/lsws/conf/vhosts/Example/
+rm -f vhconf.conf
+echo ""
+wget http://www.indogonetwork.com/config/vhconf.conf
+echo ""
 sudo chown -R lsadm:lsadm /usr/local/lsws/conf/vhosts/Example/vhconf.conf
 echo ""
-wget http://www.indogonetwork.com/httpd_config.txt
-rm -f /usr/local/lsws/conf/httpd_config.conf
-mv httpd_config.txt /usr/local/lsws/conf/httpd_config.conf
+cd /usr/local/lsws/conf/
+rm -f httpd_config.conf
+echo ""
+wget http://www.indogonetwork.com/config/httpd_config.conf
+echo ""
 sudo chown -R lsadm:lsadm /usr/local/lsws/conf/httpd_config.conf
+echo ""
 sudo /etc/init.d/lsws restart
 echo "======================"
 echo "      F I N I S H     "
 echo "======================"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+       ________                        __                    +"
-echo "+       \______ \   ____   ____ _____ _/  |_  ____            +"
-echo "+         |    |  \ /  _ \ /    \\__  \\   __\/ __ \          +"
+echo "+       \______ \   ____   ____ _____ _/  |__  ____           +"
+echo "+         |    |  \ /  _ \ /    \\__  \\    _\/ __ \          +"
 echo "+         |    |   (  <_> )   |  \/ __ \|  | \  ___/          +"
 echo "+        /_______  /\____/|___|  (____  /__|  \___  >         +"
 echo "+                \/            \/     \/          \/          +"
