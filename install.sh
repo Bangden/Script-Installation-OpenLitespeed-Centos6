@@ -14,7 +14,7 @@
 passrootmysql="ubah pass root mysql"
 database="ubah nama database"
 userdatabase="ubah user database"
-passusermysqlwp="ubah pass user mysql"
+passdatabase="ubah pass database"
 ###########################################################################
 
 ipserver=`wget http://ipecho.net/plain -O - -q ; echo`
@@ -97,17 +97,17 @@ echo ""
 echo "============="
 echo " Setup Mysql "
 echo "============="
-/etc/init.d/mysql stop
+sudo /etc/init.d/mysql stop
 cd /etc/
 rm -f myconf.cnf
 wget http://www.indogonetwork.com/myconf.txt
 mv myconf.txt myconf.cnf
-/etc/init.d/mysql start
+sudo/etc/init.d/mysql start
 echo ""
 echo "=============================="
 echo " Nyalakan kembali IP Tablesnya"
 echo "=============================="
-/etc/init.d/iptables start
+sudo /etc/init.d/iptables start
 echo "Buat rule juga untuk IP Tablesnya"
 iptables -A INPUT -i eth0 -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -I INPUT 1 -p tcp --dport 22 -j ACCEPT
@@ -125,7 +125,7 @@ yum -y install unzip
 yum -y install nano
 clear
 echo "======  Buat Database wordpress  ======"
-mysql -u root -p$passrootmysql -e "CREATE DATABASE $database;GRANT ALL ON $database.* TO $userdatabase@localhost IDENTIFIED BY '$passusermysqlwp';FLUSH PRIVILEGES;exit"
+mysql -u root -p$passrootmysql -e "CREATE DATABASE $database;GRANT ALL ON $database.* TO $userdatabase@localhost IDENTIFIED BY '$passdatabase';FLUSH PRIVILEGES;exit"
 echo "======  Oke Pembuatan database telah selesai  ======"
 clear
 echo "================================="
@@ -160,22 +160,22 @@ sudo /etc/init.d/lsws restart
 echo "======================"
 echo "      F I N I S H     "
 echo "======================"
-echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-echo "+       ________                        __                    +"
-echo "+       \______ \   ____   ____ _____ _/  |__  ____           +"
-echo "+         |    |  \ /  _ \ /    \\__  \\    _\/ __ \          +"
-echo "+         |    |   (  <_> )   |  \/ __ \|  | \  ___/          +"
-echo "+        /_______  /\____/|___|  (____  /__|  \___  >         +"
-echo "+                \/            \/     \/          \/          +"
-echo "+-------------------------------------------------------------+"
-echo "+     ITUNG2 BUAT TENAGA, ROKOK, KOPI KONEKSI & PIKIRAN       +"
-echo "+                 T E R I M A  K A S I H                      +"
-echo "+             PAYPAL  = https://bit.ly/bangden                +"
-echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-echo "==============================================================="
-echo "= Halaman login OpenLitespeed                                 ="
-echo "= IP: https://$ipserver:7080                                  "
-echo "==============================================================="
-echo "= Seting Wordpressnya:                                        ="
-echo "= Melalui IP: $ipserver / Domain Anda                         "
-echo "==============================================================="
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "+ ________                        __                    +"
+echo "+ \______ \   ____   ____ _____ _/  |__  _____          +"
+echo "+   |    |  \ /  _ \ /    \\__  \\    _\/ __  \         +"
+echo "+   |    |   (  <_> )   |  \/ __ \|  | \  ____/         +"
+echo "+  /_______  /\____/|___|  (____  /__|  \___  >         +"
+echo "+          \/            \/     \/          \/          +"
+echo "+-------------------------------------------------------+"
+echo "+   ITUNG2 BUAT TENAGA, ROKOK, KOPI KONEKSI & PIKIRAN   +"
+echo "+               T E R I M A  K A S I H                  +"
+echo "+         PAYPAL  = https://bit.ly/bangden              +"
+echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+echo "========================================================="
+echo "= Halaman login OpenLitespeed                           ="
+echo "= IP: https://$ipserver:7080                            "
+echo "========================================================="
+echo "= Seting Wordpressnya                                   ="
+echo "= Melalui IP: $ipserver / Domain Anda                    "
+echo "========================================================="
