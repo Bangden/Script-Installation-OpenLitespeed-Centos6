@@ -33,12 +33,10 @@ sudo yum -y update
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+ Tahap 1: Install Repositori Percona Mysql Server +"
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++"
-sudo yum -y install http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm
-sudo yum list | grep percona
+sudo rpm -ivh http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm
 sudo yum -y install Percona-Server-server-57 Percona-Server-client-57 Percona-Server-devel-57
 echo "Sekarang start mysql"
 sudo service mysql start
-sudo service mysql status
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+ PERHATIAN !!!                                                 +"
 echo "+ 1.Tekan ENTER                                                 +"
@@ -49,6 +47,8 @@ echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 /usr/bin/mysql_secure_installation
 echo "Sekarang restart mysql"
 sudo service mysql restart
+sudo service mysql status
+echo ""
 echo "+++++++++++++++++++++++++++++++++"
 echo "+ Tahap 2: Install EPEL repo 6  +"
 echo "+++++++++++++++++++++++++++++++++"
