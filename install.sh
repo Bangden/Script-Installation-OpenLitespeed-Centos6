@@ -33,8 +33,11 @@ sudo yum -y update
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+ Tahap 1: Install Repositori Percona Mysql Server +"
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++"
-sudo rpm -ivh http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm
-sudo yum -y install Percona-Server-server-57 Percona-Server-client-57 Percona-Server-devel-57
+sudo yum install https://www.percona.com/redir/downloads/percona-release/redhat/0.1-4/percona-release-0.1-4.noarch.rpm
+yum list | grep percona
+sudo yum install Percona-Server-server-57
+sudo yum install Percona-Server-client-57
+sudo yum install Percona-Server-devel-57
 echo "Sekarang start mysql"
 sudo service mysql start
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
