@@ -101,8 +101,8 @@ echo " Setup Mysql "
 echo "============="
 sudo service mysql stop
 cd /etc
-rm -f my.cnf
-wget https://raw.githubusercontent.com/Bangden/Script-Installation-OpenLitespeed-Centos6/master/my.cnf
+rm -f myconf.cnf
+wget https://raw.githubusercontent.com/Bangden/Script-Installation-OpenLitespeed-Centos6/master/myconf.cnf
 sudo service mysql start
 echo ""
 echo "=============================="
