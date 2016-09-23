@@ -33,10 +33,12 @@ sudo yum -y update
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+ Tahap 1: Install Repositori Percona Mysql Server +"
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++"
-rpm -Uhv https://www.percona.com/redir/downloads/percona-release/redhat/latest/percona-release-0.1-4.noarch.rpm
-sudo yum -y install Percona-Server-client-55 Percona-Server-server-55 Percona-Server-devel-55
+sudo yum -y install http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm
+sudo yum list | grep percona
+sudo yum -y install Percona-Server-server-57 Percona-Server-client-57 Percona-Server-devel-57
 echo "Sekarang start mysql"
-sudo /etc/init.d/mysql start
+sudo service mysql start
+sudo service mysql status
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+ PERHATIAN !!!                                                 +"
 echo "+ 1.Tekan ENTER                                                 +"
@@ -46,7 +48,7 @@ echo "+ 3.Ketik Y lalu Enter Semua sampai selesai                     +"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 /usr/bin/mysql_secure_installation
 echo "Sekarang restart mysql"
-sudo /etc/init.d/mysql restart
+sudo service mysql restart
 echo "+++++++++++++++++++++++++++++++++"
 echo "+ Tahap 2: Install EPEL repo 6  +"
 echo "+++++++++++++++++++++++++++++++++"
@@ -97,11 +99,11 @@ echo ""
 echo "============="
 echo " Setup Mysql "
 echo "============="
-sudo /etc/init.d/mysql stop
-cd /etc/
-rm -f myconf.cnf
-wget https://bangden.id/myconf.cnf
-sudo/etc/init.d/mysql start
+sudo service mysql stop
+cd /etc
+rm -f my.cnf
+wget https://bangden.id/my.cnf
+sudo service mysql start
 echo ""
 echo "=============================="
 echo " Nyalakan kembali IP Tablesnya"
