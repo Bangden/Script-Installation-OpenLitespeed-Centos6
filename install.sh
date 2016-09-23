@@ -100,8 +100,7 @@ echo "============="
 sudo /etc/init.d/mysql stop
 cd /etc/
 rm -f myconf.cnf
-wget http://www.indogonetwork.com/myconf.txt
-mv myconf.txt myconf.cnf
+wget https://bangden.id/myconf.cnf
 sudo/etc/init.d/mysql start
 echo ""
 echo "=============================="
@@ -145,14 +144,14 @@ echo ""
 cd /usr/local/lsws/conf/vhosts/Example/
 rm -f vhconf.conf
 echo ""
-wget http://www.indogonetwork.com/config/vhconf.conf
+wget https://bangden.id/vhconf.conf
 echo ""
 sudo chown -R lsadm:lsadm /usr/local/lsws/conf/vhosts/Example/vhconf.conf
 echo ""
 cd /usr/local/lsws/conf/
 rm -f httpd_config.conf
 echo ""
-wget http://www.indogonetwork.com/config/httpd_config.conf
+wget https://bangden.id/httpd_config.conf
 echo ""
 sudo chown -R lsadm:lsadm /usr/local/lsws/conf/httpd_config.conf
 echo ""
