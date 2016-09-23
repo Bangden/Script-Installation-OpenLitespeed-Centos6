@@ -11,10 +11,10 @@
 ###########################################################################
 # Konfigurasi Passroot mysql, Database, User Database, Pass User Database #
 ###########################################################################
-passrootmysql="ubah pass root mysql"
-database="ubah nama database"
-userdatabase="ubah user database"
-passdatabase="ubah pass database"
+passrootmysql="strengpass"
+database="dbwp"
+userdatabase="userdbwp"
+passdatabase="passdbwp"
 ###########################################################################
 
 ipserver=`wget http://ipecho.net/plain -O - -q ; echo`
@@ -33,10 +33,15 @@ sudo yum -y update
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+ Tahap 1: Install Repositori Percona Mysql Server +"
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++"
-sudo -Uhv https://www.percona.com/redir/downloads/percona-release/redhat/0.0-1/percona-release-0.0-1.x86_64.rpm
-sudo yum -y install Percona-Server-client-55 Percona-Server-server-55 Percona-Server-devel-55
+sudo yum -y install https://www.percona.com/redir/downloads/percona-release/redhat/0.1-4/percona-release-0.1-4.noarch.rpm
+yum list | grep percona
+yum -y install Percona-Server-server-57
+clear
 echo "Sekarang start mysql"
 sudo service mysql start
+echo ""
+grep 'temporary password' /var/log/mysqld.log
+echo ""
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 echo "+ PERHATIAN !!!                                                 +"
 echo "+ 1.Tekan ENTER                                                 +"
@@ -44,7 +49,7 @@ echo "+ 2.Ketik Y lalu tekan Enter lalu masukan pass baru untuk Mysql +"
 echo "+   Password harus sama dengan konfigurasi (passrootmysql).     +"
 echo "+ 3.Ketik Y lalu Enter Semua sampai selesai                     +"
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
-/usr/bin/mysql_secure_installation
+sudo /usr/bin/mysql_secure_installation
 echo "Sekarang restart mysql"
 sudo service mysql restart
 sudo service mysql status
@@ -101,8 +106,8 @@ echo " Setup Mysql "
 echo "============="
 sudo service mysql stop
 cd /etc
-rm -f myconf.cnf
-wget https://raw.githubusercontent.com/Bangden/Script-Installation-OpenLitespeed-Centos6/master/myconf.cnf
+rm -f my.cnf
+wget https://raw.githubusercontent.com/Bangden/Script-Installation-OpenLitespeed-Centos6/master/my.cnf
 sudo service mysql start
 echo ""
 echo "=============================="
