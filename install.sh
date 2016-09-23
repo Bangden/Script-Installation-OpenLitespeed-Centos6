@@ -4,7 +4,7 @@
 #   Auto Install OpenLitespeed, CentOS & Percona DB   #
 #       Fresh server install CentOS 6x 64bit          #
 #    Pastikan Anda dalam user root sebelum install    #
-#                 Copyright Bang Den                  #
+#                 Copyright bangden.id                #
 #             Email  bangden07@gmail.com              #
 #######################################################
 
@@ -102,7 +102,7 @@ echo "============="
 sudo service mysql stop
 cd /etc
 rm -f my.cnf
-wget https://bangden.id/my.cnf
+wget https://raw.githubusercontent.com/Bangden/Script-Installation-OpenLitespeed-Centos6/master/my.cnf
 sudo service mysql start
 echo ""
 echo "=============================="
@@ -128,7 +128,7 @@ clear
 echo "======  Buat Database wordpress  ======"
 mysql -u root -p$passrootmysql -e "CREATE DATABASE $database;GRANT ALL ON $database.* TO $userdatabase@localhost IDENTIFIED BY '$passdatabase';FLUSH PRIVILEGES;exit"
 echo "======  Oke Pembuatan database telah selesai  ======"
-clear
+echo ""
 echo "================================="
 echo "  Tahap installasi wordpress gan "
 echo "================================="
@@ -146,14 +146,14 @@ echo ""
 cd /usr/local/lsws/conf/vhosts/Example/
 rm -f vhconf.conf
 echo ""
-wget https://bangden.id/vhconf.conf
+wget https://raw.githubusercontent.com/Bangden/Script-Installation-OpenLitespeed-Centos6/master/vhconf.conf
 echo ""
 sudo chown -R lsadm:lsadm /usr/local/lsws/conf/vhosts/Example/vhconf.conf
 echo ""
 cd /usr/local/lsws/conf/
 rm -f httpd_config.conf
 echo ""
-wget https://bangden.id/httpd_config.conf
+wget https://raw.githubusercontent.com/Bangden/Script-Installation-OpenLitespeed-Centos6/master/httpd_config.conf
 echo ""
 sudo chown -R lsadm:lsadm /usr/local/lsws/conf/httpd_config.conf
 echo ""
@@ -180,3 +180,4 @@ echo "========================================================="
 echo "= Seting Wordpressnya                                   ="
 echo "= Melalui IP: $ipserver / Domain Anda                    "
 echo "========================================================="
+echo "                  https://bangden.id                     "
